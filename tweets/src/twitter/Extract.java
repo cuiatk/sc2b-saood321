@@ -3,6 +3,7 @@
  */
 package twitter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +25,13 @@ public class Extract {
      *         every tweet in the list.
      */
     public static Timespan getTimespan(List<Tweet> tweets) {
-        throw new RuntimeException("not implemented");
+    	
+    	Instant first,last;
+    	first=tweets.get(0).getTimestamp();
+    	last=tweets.get(tweets.size()-1).getTimestamp();
+    	Timespan sp=new Timespan(first,last);
+    	return sp;
+       
     }
 
     /**
@@ -43,6 +50,15 @@ public class Extract {
      *         include a username at most once.
      */
     public static Set<String> getMentionedUsers(List<Tweet> tweets) {
+    	
+    	String f,l;
+    	f=tweets.get(0).getAuthor();
+    	l=tweets.get((tweets.size()-1)).getAuthor();
+    	
+    	
+    	
+    	
+    	
         throw new RuntimeException("not implemented");
     }
 

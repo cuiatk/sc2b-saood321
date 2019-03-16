@@ -36,14 +36,20 @@ public class ExtractTest {
         
         assertEquals("expected start", d1, timespan.getStart());
         assertEquals("expected end", d2, timespan.getEnd());
+        
     }
+    
     
     @Test
     public void testGetMentionedUsersNoMention() {
         Set<String> mentionedUsers = Extract.getMentionedUsers(Arrays.asList(tweet1));
+        Set<String> mentionedUsers1 = Extract.getMentionedUsers(Arrays.asList(tweet2));
+        assertEquals("alyssa",mentionedUsers);
+        assertEquals("bbitdiddle",mentionedUsers1);
         
-        assertTrue("expected empty set", mentionedUsers.isEmpty());
     }
+
+
 
     /*
      * Warning: all the tests you write here must be runnable against any
